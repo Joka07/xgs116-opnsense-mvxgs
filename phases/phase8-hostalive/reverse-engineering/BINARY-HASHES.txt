@@ -1,0 +1,8 @@
+User-supplied SFOS binaries were analysed locally but are NOT redistributed in this package.
+
+071c10a617adc1c6d92c6bf4a08bb6cac93858bfbe8d53f94e346b2c405baaa6  mv_armada_drv.ko
+363cea6c9a1586fda7548753fd8486f9b0eb4402df0e37fdf8cdd52ae16885aa  mv_pcinet_drv.ko
+0713fbebb63c782ca47a8aedc996ee32fc34a5f247f1bb3e6b0777c83b9fca5c  mv_giu_drv.ko
+270764b11a4750220962dd42dc369e8dbd3bc5b228535fa355de2c0b24a84690  mv_nwa_host.ko
+beccd879e24c24294e6661f95cd8f8db09a8acf25c59fb2d3f97c85b48f91aa9  mv_pport.ko
+19159a4866ded49d81dbc1115989994dc9fdc1a72bbeaa4bead286afd9b0ae0d  librte_pmd_armada_ep.so.20.0

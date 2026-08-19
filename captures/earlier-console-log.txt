@@ -1,0 +1,357 @@
+root@OPNsense:~ # pciconf -lBbcev pci0:1:0:0
+none0@pci0:1:0:0:       class=0x020000 rev=0x00 hdr=0x00 vendor=0x11ab device=0x7080 subvendor=0x0000 subdevice=0x0000
+    vendor     = 'Marvell Technology Group Ltd.'
+    class      = network
+    subclass   = ethernet
+    bar   [10] = type Memory, range 64, base 0xfe000000, size 1048576, enabled
+    bar   [18] = type Memory, range 64, base 0xfd000000, size 16777216, enabled
+    bar   [20] = type Memory, range 32, base 0xfc000000, size 16777216, enabled
+    cap 01[40] = powerspec 3  supports D0 D1 D2 D3  current D0
+    cap 05[50] = MSI supports 32 messages, 64 bit, vector masks enabled with 1 message
+    cap 10[70] = PCI-Express 2 endpoint max data 512(512) RO NS
+                 max read 512
+                 link x4(x4) speed 8.0(8.0) ASPM disabled(L0s/L1)
+    cap 11[b0] = MSI-X supports 16 messages, enabled
+                 Table in map 0x10[0x1000], PBA in map 0x10[0x1800]
+    ecap 0001[100] = AER 2 0 fatal 0 non-fatal 1 corrected
+    ecap 000e[148] = ARI 1
+    ecap 0019[158] = PCIe Sec 1 lane errors 0
+    ecap 0010[178] = SR-IOV 1 IOV disabled, Memory Space disabled, ARI disabled
+                     0 VFs configured out of 6 supported
+                     First VF RID Offset 0x0002, VF RID Stride 0x0001
+                     VF Device ID 0x7081
+                     Page Sizes: 4096 (enabled), 8192, 65536, 262144, 1048576, 4194304
+    ecap 0017[1b8] = TPH Requester 1
+    ecap 0018[244] = LTR 1
+    ecap 001e[24c] = L1 PM Substates 1
+    ecap 0015[25c] = Resizable BAR 1
+  PCI-e errors = Correctable Error Detected
+                 Unsupported Request Detected
+     Corrected = Advisory Non-Fatal Error
+root@OPNsense:~ # devinfo -rv
+nexus0
+  efirtc0 <EFI Realtime Clock>
+  smbios0 <System Management BIOS>
+  vtvga0 <VT VGA driver>
+      I/O memory addresses:
+          0xa0000-0xaffff
+  cryptosoft0 <software crypto>
+  aesni0 <AES-CBC,AES-CCM,AES-GCM,AES-ICM,AES-XTS>
+  ram0 <System RAM>
+      I/O memory addresses:
+          0x0-0x9ffff
+          0x100000-0xf413dfff
+          0xf4224000-0xf4707fff
+          0xf5e17000-0xf6ffffff
+          0x100000000-0x306ffffff
+  apic0 <APIC resources>
+  acpi0 <ALASKA A M I >
+      Interrupt request lines:
+          0x9
+      I/O ports:
+          0x10-0x1f
+          0x22-0x3f
+          0x63
+          0x65
+          0x67-0x6f
+          0x72-0x7f
+          0x80
+          0x84-0x86
+          0x88
+          0x8c-0x8e
+          0x90-0x9f
+          0xa2-0xbf
+          0xe0-0xef
+          0x40b
+          0x4d0-0x4d1
+          0x4d6
+          0x800-0x89f
+          0x900-0x90f
+          0x910-0x91f
+          0xa00-0xa1f
+          0xa20-0xa2f
+          0xa30-0xa3f
+          0xa40-0xa4f
+          0xb00-0xb0f
+          0xb20-0xb3f
+          0xc00-0xc01
+          0xc14
+          0xc50-0xc51
+          0xc52
+          0xc6c
+          0xc6f
+          0xcd0-0xcd1
+          0xcd2-0xcd3
+          0xcd4-0xcd5
+          0xcd6-0xcd7
+          0xcd8-0xcdf
+          0xfe00-0xfefe
+      I/O memory addresses:
+          0xf8000000-0xfbffffff
+          0xfe200000-0xfe2fffff
+          0xfeb80000-0xfebfffff
+          0xfec00000-0xfec00fff
+          0xfec01000-0xfec01fff
+          0xfec10000-0xfec10fff
+          0xfed61000-0xfed70fff
+          0xfed80000-0xfed8ffff
+          0xfedc0000-0xfedc0fff
+          0xfee00000-0xfee00fff
+          0xff000000-0xffffffff
+    cpu0 <ACPI CPU> pnpinfo _HID=none _UID=0 _CID=none at handle=\_PR_.P000
+        I/O ports:
+            0x414
+      acpi_perf0
+      acpi_throttle0
+      hwpstate0 <Cool`n'Quiet 2.0>
+      cpufreq0 <CPU frequency control>
+    cpu1 <ACPI CPU> pnpinfo _HID=none _UID=0 _CID=none at handle=\_PR_.P001
+        I/O ports:
+            0x414
+      acpi_perf1
+      acpi_throttle1
+      hwpstate1
+    cpu2 <ACPI CPU> pnpinfo _HID=none _UID=0 _CID=none at handle=\_PR_.P002
+        I/O ports:
+            0x414
+      acpi_perf2
+      acpi_throttle2
+      hwpstate2
+    cpu3 <ACPI CPU> pnpinfo _HID=none _UID=0 _CID=none at handle=\_PR_.P003
+        I/O ports:
+            0x414
+      acpi_perf3
+      acpi_throttle3
+      hwpstate3
+    pcib0 <ACPI Host-PCI bridge> pnpinfo _HID=PNP0A08 _UID=0 _CID=PNP0A03 at handle=\_SB_.PCI0
+        I/O ports:
+            0xcf8-0xcff
+      pci0 <ACPI PCI bus>
+          PCI domain 0 bus numbers:
+              0
+        hostb0 <Host to PCI bridge> pnpinfo vendor=0x1022 device=0x1576 subvendor=0x1022 subdevice=0x1576 class=0x060000 at slot=0 function=0 dbsf=pci0:0:0:0 handle=\_SB_.PCI0.GNBD
+        unknown pnpinfo vendor=0x1022 device=0x1577 subvendor=0x1022 subdevice=0x1577 class=0x080600 at slot=0 function=2 dbsf=pci0:0:0:2 handle=\_SB_.PCI0.IOMA
+        hostb1 <Host to PCI bridge> pnpinfo vendor=0x1022 device=0x157b subvendor=0x0000 subdevice=0x0000 class=0x060000 at slot=2 function=0 dbsf=pci0:0:2:0
+        hostb2 <Host to PCI bridge> pnpinfo vendor=0x1022 device=0x157b subvendor=0x0000 subdevice=0x0000 class=0x060000 at slot=3 function=0 dbsf=pci0:0:3:0
+        pcib1 <ACPI PCI-PCI bridge> pnpinfo vendor=0x1022 device=0x157c subvendor=0x1022 subdevice=0x1234 class=0x060400 at slot=3 function=1 dbsf=pci0:0:3:1 handle=\_SB_.PCI0.GFX0
+            I/O memory addresses:
+                0xfc000000-0xfe1fffff
+            PCI domain 0 bus numbers:
+                1
+          pci1 <ACPI PCI bus>
+              pcib1 bus numbers:
+                  1
+            unknown pnpinfo vendor=0x11ab device=0x7080 subvendor=0x0000 subdevice=0x0000 class=0x020000 at slot=0 function=0 dbsf=pci0:1:0:0
+                pcib1 memory window:
+                    0xfc000000-0xfcffffff
+                    0xfd000000-0xfdffffff
+                    0xfe000000-0xfe0fffff
+        unknown pnpinfo vendor=0x1022 device=0x1578 subvendor=0x1022 subdevice=0x1578 class=0x108000 at slot=8 function=0 dbsf=pci0:0:8:0 handle=\_SB_.PCI0.APSP
+            I/O memory addresses:
+                0xfe300000-0xfe3fffff
+                0xfe402000-0xfe403fff
+                0xfe407000-0xfe407fff
+                0xfea00000-0xfea1ffff
+        hostb3 <Host to PCI bridge> pnpinfo vendor=0x1022 device=0x157d subvendor=0x0000 subdevice=0x0000 class=0x060000 at slot=9 function=0 dbsf=pci0:0:9:0
+        xhci0 <AMD FCH USB 3.0 controller> pnpinfo vendor=0x1022 device=0x7914 subvendor=0x1022 subdevice=0x7914 class=0x0c0330 at slot=16 function=0 dbsf=pci0:0:16:0 handle=\_SB_.PCI0.XHC0
+            Interrupt request lines:
+                0x3b
+            I/O memory addresses:
+                0xfe400000-0xfe401fff
+          usbus0
+            uhub0 <AMD XHCI root HUB, class 9/0, rev 3.00/1.00, addr 1>
+        ahci0 <AMD KERNCZ AHCI SATA controller> pnpinfo vendor=0x1022 device=0x7901 subvendor=0x1022 subdevice=0x7901 class=0x010601 at slot=17 function=0 dbsf=pci0:0:17:0 handle=\_SB_.PCI0.SATA
+            Interrupt request lines:
+                0x13
+            I/O ports:
+                0xf000-0xf00f
+                0xf010-0xf013
+                0xf020-0xf027
+                0xf030-0xf033
+                0xf040-0xf047
+            I/O memory addresses:
+                0xfe406000-0xfe4063ff
+          ahcich0 <AHCI channel> at channel=0
+              I/O memory addresses:
+                  0xfe406100-0xfe40617f
+        ehci0 <AMD FCH USB 2.0 controller> pnpinfo vendor=0x1022 device=0x7908 subvendor=0x1022 subdevice=0x7908 class=0x0c0320 at slot=18 function=0 dbsf=pci0:0:18:0 handle=\_SB_.PCI0.EHC1
+            Interrupt request lines:
+                0x12
+            I/O memory addresses:
+                0xfe405000-0xfe4050ff
+          usbus1
+            uhub1 <AMD EHCI root HUB, class 9/0, rev 2.00/1.00, addr 1>
+              uhub2 <vendor 0x0438 product 0x7900, class 9/0, rev 2.00/0.18, addr 2> pnpinfo vendor=0x0438 product=0x7900 devclass=0x09 devsubclass=0x00 devproto=0x01 sernum="" release=0x0018 mode=host intclass=0x09 intsubclass=0x00 intprotocol=0x00 at bus=1 hubaddr=1 port=1 devaddr=2 interface=0 ugen=ugen1.2
+                umass0 <STT USBAG1, class 0/0, rev 2.10/11.00, addr 3> pnpinfo vendor=0x1b8f product=0x0345 devclass=0x00 devsubclass=0x00 devproto=0x00 sernum="2417442100000060" release=0x1100 mode=host intclass=0x08 intsubclass=0x06 intprotocol=0x50 at bus=1 hubaddr=2 port=2 devaddr=3 interface=0 ugen=ugen1.3
+                usbhid0 <Microchip Technology Inc. MCP2210 USB to SPI Master, class 0/0, rev 2.00/0.02, addr 4> pnpinfo vendor=0x04d8 product=0x00de devclass=0x00 devsubclass=0x00 devproto=0x00 sernum="0001234797" release=0x0002 mode=host intclass=0x03 intsubclass=0x00 intprotocol=0x00 at bus=1 hubaddr=2 port=3 devaddr=4 interface=0 ugen=ugen1.4
+                  hidbus0 <HID bus>
+                    unknown pnpinfo page=0xff00 usage=0x0001 bus=0x03 vendor=0x04d8 product=0x00de version=0x0002 at index=0
+        intsmb0 <AMD FCH SMBus Controller> pnpinfo vendor=0x1022 device=0x790b subvendor=0x1022 subdevice=0x790b class=0x0c0500 at slot=20 function=0 dbsf=pci0:0:20:0 handle=\_SB_.PCI0.D01E
+            ACPI I/O ports:
+                0xb00-0xb0f
+          smbus0 <System Management Bus>
+        isab0 <PCI-ISA bridge> pnpinfo vendor=0x1022 device=0x790e subvendor=0x1022 subdevice=0x790e class=0x060100 at slot=20 function=3 dbsf=pci0:0:20:3 handle=\_SB_.PCI0.SBRG
+          isa0 <ISA bus>
+            sc0
+            vga0
+            atkbdc0
+            uart1
+        sdhci_pci0 <Generic SD HCI> pnpinfo vendor=0x1022 device=0x7906 subvendor=0x1022 subdevice=0x7906 class=0x080501 at slot=20 function=7 dbsf=pci0:0:20:7 handle=\_SB_.PCI0.SDIO
+            Interrupt request lines:
+                0x3c
+            I/O memory addresses:
+                0xfe404000-0xfe4040ff
+          mmc0 <MMC/SD bus>
+        hostb4 <Host to PCI bridge> pnpinfo vendor=0x1022 device=0x1570 subvendor=0x0000 subdevice=0x0000 class=0x060000 at slot=24 function=0 dbsf=pci0:0:24:0
+        hostb5 <Host to PCI bridge> pnpinfo vendor=0x1022 device=0x1571 subvendor=0x0000 subdevice=0x0000 class=0x060000 at slot=24 function=1 dbsf=pci0:0:24:1
+        hostb6 <Host to PCI bridge> pnpinfo vendor=0x1022 device=0x1572 subvendor=0x0000 subdevice=0x0000 class=0x060000 at slot=24 function=2 dbsf=pci0:0:24:2
+        hostb7 <Host to PCI bridge> pnpinfo vendor=0x1022 device=0x1573 subvendor=0x0000 subdevice=0x0000 class=0x060000 at slot=24 function=3 dbsf=pci0:0:24:3
+        hostb8 <Host to PCI bridge> pnpinfo vendor=0x1022 device=0x1574 subvendor=0x0000 subdevice=0x0000 class=0x060000 at slot=24 function=4 dbsf=pci0:0:24:4
+        hostb9 <Host to PCI bridge> pnpinfo vendor=0x1022 device=0x1575 subvendor=0x0000 subdevice=0x0000 class=0x060000 at slot=24 function=5 dbsf=pci0:0:24:5
+    acpi_sysresource0 <System Resource> pnpinfo _HID=PNP0C01 _UID=200 _CID=none at handle=\_SB_.PCI0.AMDN
+    acpi_sysresource1 <System Resource> pnpinfo _HID=PNP0C02 _UID=20 _CID=none at handle=\_SB_.PCI0.GNBD.BROD
+    acpi_sysresource2 <System Resource> pnpinfo _HID=PNP0C02 _UID=21 _CID=none at handle=\_SB_.PCI0.UMEM
+    unknown pnpinfo _HID=PNP0000 _UID=0 _CID=none at handle=\_SB_.PCI0.SBRG.PIC_
+        I/O ports:
+            0x20-0x21
+            0xa0-0xa1
+    atdma0 <AT DMA controller> pnpinfo _HID=PNP0200 _UID=0 _CID=none at handle=\_SB_.PCI0.SBRG.DMAD
+        DMA request lines:
+            4
+        I/O ports:
+            0x0-0xf
+            0x81-0x83
+            0x87
+            0x89-0x8b
+            0x8f
+            0xc0-0xdf
+    attimer0 <AT timer> pnpinfo _HID=PNP0100 _UID=0 _CID=none at handle=\_SB_.PCI0.SBRG.TMR_
+        Interrupt request lines:
+            0x0
+        I/O ports:
+            0x40-0x43
+    atrtc0 <AT realtime clock> pnpinfo _HID=PNP0B00 _UID=0 _CID=none at handle=\_SB_.PCI0.SBRG.RTC0
+        Interrupt request lines:
+            0x8
+        I/O ports:
+            0x70-0x71
+    unknown pnpinfo _HID=PNP0800 _UID=0 _CID=none at handle=\_SB_.PCI0.SBRG.SPKR
+        I/O ports:
+            0x61
+    unknown pnpinfo _HID=AMDC003 _UID=0 _CID=none at handle=\_SB_.PCI0.SBRG.ECIR
+        I/O ports:
+            0x550-0x551
+    acpi_sysresource3 <System Resource> pnpinfo _HID=PNP0C02 _UID=0 _CID=none at handle=\_SB_.PCI0.SBRG.SIO1
+    uart0 <16550 or compatible> pnpinfo _HID=PNP0501 _UID=0 _CID=none at handle=\_SB_.PCI0.SBRG.UAR1
+        Interrupt request lines:
+            0x4
+        I/O ports:
+            0x3f8-0x3ff
+    uart2 <16550 or compatible> pnpinfo _HID=PNP0501 _UID=1 _CID=none at handle=\_SB_.PCI0.SBRG.UAR2
+        Interrupt request lines:
+            0x3
+        I/O ports:
+            0x3e8-0x3ef
+    unknown pnpinfo _HID=PNP0C08 _UID=0 _CID=none at handle=\_SB_.PCI0.SBRG.HHWM (disabled)
+    unknown pnpinfo _HID=PNP0C08 _UID=2 _CID=none at handle=\_SB_.PCI0.SBRG.SGPI (disabled)
+    acpi_sysresource4 <System Resource> pnpinfo _HID=PNP0C02 _UID=1792 _CID=none at handle=\_SB_.PCI0.S900
+    acpi_sysresource5 <System Resource> pnpinfo _HID=PNP0C02 _UID=0 _CID=none at handle=\_SB_.PCI0.APSP
+    acpi_button0 <Power Button> pnpinfo _HID=PNP0C0C _UID=170 _CID=none at handle=\_SB_.PWRB
+    unknown pnpinfo _HID=I2SC1002 _UID=1 _CID=AMD1234 at handle=\_SB_.I2SC (disabled)
+    pci_link0 <ACPI PCI Link LNKA> pnpinfo _HID=PNP0C0F _UID=1 _CID=none at handle=\_SB_.LNKA
+    pci_link1 <ACPI PCI Link LNKB> pnpinfo _HID=PNP0C0F _UID=2 _CID=none at handle=\_SB_.LNKB
+    pci_link2 <ACPI PCI Link LNKC> pnpinfo _HID=PNP0C0F _UID=3 _CID=none at handle=\_SB_.LNKC
+    pci_link3 <ACPI PCI Link LNKD> pnpinfo _HID=PNP0C0F _UID=4 _CID=none at handle=\_SB_.LNKD
+    pci_link4 <ACPI PCI Link LNKE> pnpinfo _HID=PNP0C0F _UID=5 _CID=none at handle=\_SB_.LNKE
+    pci_link5 <ACPI PCI Link LNKF> pnpinfo _HID=PNP0C0F _UID=6 _CID=none at handle=\_SB_.LNKF
+    pci_link6 <ACPI PCI Link LNKG> pnpinfo _HID=PNP0C0F _UID=7 _CID=none at handle=\_SB_.LNKG
+    pci_link7 <ACPI PCI Link LNKH> pnpinfo _HID=PNP0C0F _UID=8 _CID=none at handle=\_SB_.LNKH
+    unknown pnpinfo _HID=none _UID=0 _CID=none at handle=\_SB_.P0U3
+    unknown pnpinfo _HID=none _UID=0 _CID=none at handle=\_SB_.P3U3
+    unknown pnpinfo _HID=none _UID=0 _CID=none at handle=\_SB_.P0U2
+    unknown pnpinfo _HID=none _UID=0 _CID=none at handle=\_SB_.P3U2
+    unknown pnpinfo _HID=none _UID=0 _CID=none at handle=\_SB_.P0SD
+    unknown pnpinfo _HID=none _UID=0 _CID=none at handle=\_SB_.P3SD
+    unknown pnpinfo _HID=none _UID=0 _CID=none at handle=\_SB_.P0ST
+    unknown pnpinfo _HID=none _UID=0 _CID=none at handle=\_SB_.P3ST
+    unknown pnpinfo _HID=AMD0030 _UID=0 _CID=AMD0030 at handle=\_SB_.GPIO
+    unknown pnpinfo _HID=AAHB0000 _UID=0 _CID=none at handle=\_SB_.AAHB (disabled)
+    unknown pnpinfo _HID=AMD0020 _UID=0 _CID=none at handle=\_SB_.FUR0 (disabled)
+    unknown pnpinfo _HID=AMD0020 _UID=1 _CID=none at handle=\_SB_.FUR1 (disabled)
+    unknown pnpinfo _HID=AMD0010 _UID=0 _CID=none at handle=\_SB_.I2CA (disabled)
+    unknown pnpinfo _HID=AMD0010 _UID=1 _CID=none at handle=\_SB_.I2CB (disabled)
+    unknown pnpinfo _HID=AMD0010 _UID=2 _CID=none at handle=\_SB_.I2CC (disabled)
+    unknown pnpinfo _HID=AMD0010 _UID=3 _CID=none at handle=\_SB_.I2CD (disabled)
+    unknown pnpinfo _HID=MSFT0101 _UID=1 _CID=none at handle=\_SB_.TPM_
+        I/O memory addresses:
+            0xfed40000-0xfed44fff
+    acpi_sysresource6 <System Resource> pnpinfo _HID=PNP0C02 _UID=144 _CID=none at handle=\_SB_.AWR0
+    acpi_sysresource7 <System Resource> pnpinfo _HID=PNP0C02 _UID=128 _CID=none at handle=\_SB_.AWR0.ABR0
+    acpi_sysresource8 <System Resource> pnpinfo _HID=PNP0C02 _UID=129 _CID=none at handle=\_SB_.AWR0.ABR1
+    acpi_sysresource9 <System Resource> pnpinfo _HID=PNP0C02 _UID=130 _CID=none at handle=\_SB_.AWR0.ABR2
+    acpi_sysresource10 <System Resource> pnpinfo _HID=PNP0C02 _UID=131 _CID=none at handle=\_SB_.AWR0.ABR3
+    acpi_sysresource11 <System Resource> pnpinfo _HID=PNP0C02 _UID=132 _CID=none at handle=\_SB_.AWR0.ABR4
+    acpi_sysresource12 <System Resource> pnpinfo _HID=PNP0C02 _UID=145 _CID=none at handle=\_SB_.AWR1
+    acpi_sysresource13 <System Resource> pnpinfo _HID=PNP0C02 _UID=133 _CID=none at handle=\_SB_.AWR1.ABR5
+    acpi_sysresource14 <System Resource> pnpinfo _HID=PNP0C02 _UID=134 _CID=none at handle=\_SB_.AWR1.ABR6
+    acpi_sysresource15 <System Resource> pnpinfo _HID=PNP0C02 _UID=135 _CID=none at handle=\_SB_.AWR1.ABR7
+    acpi_sysresource16 <System Resource> pnpinfo _HID=PNP0C02 _UID=136 _CID=none at handle=\_SB_.AWR1.ABR8
+    acpi_sysresource17 <System Resource> pnpinfo _HID=PNP0C02 _UID=137 _CID=none at handle=\_SB_.AWR1.ABR9
+    hpet0 <High Precision Event Timer> pnpinfo _HID=PNP0103 _UID=0 _CID=none at handle=\HPET
+        Interrupt request lines:
+            0x38
+            0x39
+            0x3a
+        I/O memory addresses:
+            0xfed00000-0xfed003ff
+    acpi_timer0 <32-bit timer at 3.579545MHz> pnpinfo unknown
+        ACPI I/O ports:
+            0x808-0x80b
+root@OPNsense:~ # kldstat
+Id Refs Address                Size Name
+ 1   32 0xffffffff80200000  257da60 kernel
+ 2    1 0xffffffff8277f000    10a68 if_bridge.ko
+ 3    2 0xffffffff82790000     8af8 bridgestp.ko
+ 4    1 0xffffffff82799000    15ef8 if_lagg.ko
+ 5    2 0xffffffff827af000     3558 if_infiniband.ko
+ 6    1 0xffffffff827b3000     3c08 pflog.ko
+ 7    3 0xffffffff827b7000    bd6e8 pf.ko
+ 8    1 0xffffffff82875000     aa78 if_gre.ko
+ 9    1 0xffffffff82880000    11b40 carp.ko
+10    1 0xffffffff82892000     4be0 if_enc.ko
+11    1 0xffffffff82897000    12340 pfsync.ko
+12    1 0xffffffff83020000     a888 unionfs.ko
+13    1 0xffffffff8302b000     3220 intpm.ko
+14    1 0xffffffff8302f000     2178 smbus.ko
+15    1 0xffffffff83032000     4b40 nullfs.ko
+root@OPNsense:~ # pciconf -lBbcev pci0:1:0:0
+none0@pci0:1:0:0:       class=0x020000 rev=0x00 hdr=0x00 vendor=0x11ab device=0x7080 subvendor=0x0000 subdevice=0x0000
+    vendor     = 'Marvell Technology Group Ltd.'
+    class      = network
+    subclass   = ethernet
+    bar   [10] = type Memory, range 64, base 0xfe000000, size 1048576, enabled
+    bar   [18] = type Memory, range 64, base 0xfd000000, size 16777216, enabled
+    bar   [20] = type Memory, range 32, base 0xfc000000, size 16777216, enabled
+    cap 01[40] = powerspec 3  supports D0 D1 D2 D3  current D0
+    cap 05[50] = MSI supports 32 messages, 64 bit, vector masks enabled with 1 message
+    cap 10[70] = PCI-Express 2 endpoint max data 512(512) RO NS
+                 max read 512
+                 link x4(x4) speed 8.0(8.0) ASPM disabled(L0s/L1)
+    cap 11[b0] = MSI-X supports 16 messages, enabled
+                 Table in map 0x10[0x1000], PBA in map 0x10[0x1800]
+    ecap 0001[100] = AER 2 0 fatal 0 non-fatal 1 corrected
+    ecap 000e[148] = ARI 1
+    ecap 0019[158] = PCIe Sec 1 lane errors 0
+    ecap 0010[178] = SR-IOV 1 IOV disabled, Memory Space disabled, ARI disabled
+                     0 VFs configured out of 6 supported
+                     First VF RID Offset 0x0002, VF RID Stride 0x0001
+                     VF Device ID 0x7081
+                     Page Sizes: 4096 (enabled), 8192, 65536, 262144, 1048576, 4194304
+    ecap 0017[1b8] = TPH Requester 1
+    ecap 0018[244] = LTR 1
+    ecap 001e[24c] = L1 PM Substates 1
+    ecap 0015[25c] = Resizable BAR 1
+  PCI-e errors = Correctable Error Detected
+                 Unsupported Request Detected
+     Corrected = Advisory Non-Fatal Error
+root@OPNsense:~ #

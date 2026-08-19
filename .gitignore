@@ -1,0 +1,23 @@
+# Build products
+*.o
+*.ko
+*.core
+*.log
+/tmp/
+obj/
+
+# Large external source trees / archives
+opnsense-src-*.tar.gz
+src-*.tar.gz
+
+# Vendor/proprietary binaries and reverse-engineered full disassemblies
+xgs-npu-binaries.zip
+vendor-binaries/
+reverse-engineering-binaries/
+*.ko.disasm.txt
+*.so.*.disasm.txt
+
+# OS/editor
+.DS_Store
+Thumbs.db
+*.swp

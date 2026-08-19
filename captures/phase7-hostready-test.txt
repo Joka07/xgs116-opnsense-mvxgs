@@ -1,0 +1,175 @@
+root@OPNsense:/tmp/mvxgs-phase7/module # sysctl dev.mvxgs.0.signal_host_ready=1
+dev.mvxgs.0.signmvxgs0: passive barmap scan: off=0xffe000 version=0x5 target_cookie=0xd0fac10d
+mvxgs0: facility[4] giu   : BAR0 logical_off=0 size=0x4000
+mvxgs0: facility[0] ctrl  : BAR1 logical_off=0 size=0x1000
+mvxgs0: facility[1] mvmgmt: BAR1 logical_off=0x1000 size=0x1000
+mvxgs0: facility[2] nwa   : BAR0 logical_off=0x4000 size=0x10000
+mvxgs0: facility[3] rpc   : BAR1 logical_off=0x2000 size=0x100000
+mvxgs0: ctrl: cookie=0xafacafac flags=0x1 target_ready=1 host_ready=0 host_alive=0
+mvxgs0: mvmgmt: +0x10=0x80 +0x14=0x1 pattern=0xaa55aa55 target_pattern=1
+al_host_ready: 0
+sysctl: dev.mvxgs.0.signal_host_ready=1: Operation timed out
+root@OPNsense:/tmp/mvxgs-phase7/module #
+root@OPNsense:/tmp/mvxgs-phase7/module # sysctl dev.mvxgs.0.ctrl_flags
+dev.mvxgs.0.ctrl_flags: 3
+root@OPNsense:/tmp/mvxgs-phase7/module # sysctl dev.mvxgs.0.active_stage
+dev.mvxgs.0.active_stage: 2
+root@OPNsense:/tmp/mvxgs-phase7/module # sysctl dev.mvxgs.0.host_ready_sent
+dev.mvxgs.0.host_ready_sent: 1
+root@OPNsense:/tmp/mvxgs-phase7/module # sysctl dev.mvxgs.0.host_ready_armed
+dev.mvxgs.0.host_ready_armed: 0
+root@OPNsense:/tmp/mvxgs-phase7/module # sysctl dev.mvxgs.0.status
+dev.mvxgs.0.status: STAGE2: HOST_READY sent; target H2T-ready timed out; REBOOT
+root@OPNsense:/tmp/mvxgs-phase7/module # sysctl dev.mvxgs.0.h2t0_valid dev.mvxgs.0.h2t0_target_offset dev.mvxgs.0.h2t0_data
+2t1_valid dev.mvdev.mvxgs.0.h2t0_valid: 0
+dev.mvxgs.0.h2t0_target_offset: 0
+dev.mvxgs.0.h2t0_data: 0
+xgs.0.h2t1_target_offset dev.mvxgs.0.h2t1_data
+sysctl dev.mvxgs.0.h2t2_valid dev.mvxgs.0.h2t2_target_offset dev.mvxgs.0.h2t2_data
+sysctl dev.mvxgs.0.h2t3_valid dev.mvxgs.0.h2t3_target_offset dev.mvxgs.0.h2t3_data
+sysctl dev.mvxgs.0.h2t4_valid dev.mvxgs.0.h2t4_target_offset dev.mvxgs.0.h2t4_dataroot@OPNsense:/tmp/mvxgs-phase7/module # sysctl dev.mvxgs.0.h2t1_valid dev.mvxgs.0.h2t1_target_offset dev.mvxgs.0.h2t1_data
+dev.mvxgs.0.h2t1_valid: 0
+dev.mvxgs.0.h2t1_target_offset: 0
+dev.mvxgs.0.h2t1_data: 0
+root@OPNsense:/tmp/mvxgs-phase7/module # sysctl dev.mvxgs.0.h2t2_valid dev.mvxgs.0.h2t2_target_offset dev.mvxgs.0.h2t2_data
+dev.mvxgs.0.h2t2_valid: 0
+dev.mvxgs.0.h2t2_target_offset: 0
+dev.mvxgs.0.h2t2_data: 0
+root@OPNsense:/tmp/mvxgs-phase7/module # sysctl dev.mvxgs.0.h2t3_valid dev.mvxgs.0.h2t3_target_offset dev.mvxgs.0.h2t3_data
+dev.mvxgs.0.h2t3_valid: 0
+dev.mvxgs.0.h2t3_target_offset: 0
+dev.mvxgs.0.h2t3_data: 0
+root@OPNsense:/tmp/mvxgs-phase7/module # sysctl dev.mvxgs.0.h2t4_valid dev.mvxgs.0.h2t4_target_offset dev.mvxgs.0.h2t4_data
+dev.mvxgs.0.h2t4_valid: 0
+dev.mvxgs.0.h2t4_target_offset: 0
+dev.mvxgs.0.h2t4_data: 0
+root@OPNsense:/tmp/mvxgs-phase7/module # sysctl dev.mvxgs.0.irq0_hits dev.mvxgs.0.irq1_hits dev.mvxgs.0.irq2_hits dev.mvxgs.0.irq3_hits dev.mvxgs.0.irq4_hits
+dev.mvxgs.0.irq0_hits: 0
+dev.mvxgs.0.irq1_hits: 0
+dev.mvxgs.0.irq2_hits: 0
+dev.mvxgs.0.irq3_hits: 0
+dev.mvxgs.0.irq4_hits: 0
+root@OPNsense:/tmp/mvxgs-phase7/module # pciconf -r -h pci0:1:0:0 0x04
+-1200406
+root@OPNsense:/tmp/mvxgs-phase7/module # dmesg | tail -120
+Timecounter "TSC" frequency 2096066008 Hz quality 1000
+Timecounters tick every 1.000 msec
+ugen1.1: <AMD EHCI root HUB> at usbus1
+ugen0.1: <AMD XHCI root HUB> at usbus0
+uhub0 on usbus0
+uhub1 on usbus1
+uhub1: <AMD EHCI root HUB, class 9/0, rev 2.00/1.00, addr 1> on usbus1
+uhub0: <AMD XHCI root HUB, class 9/0, rev 3.00/1.00, addr 1> on usbus0
+mmc0: No compatible cards found on bus
+Trying to mount root from ufs:/dev/ufs/OPNsense_Install [ro,noatime]...
+uhub0: 8 ports with 6 removable, self powered
+ugen0.2: <STT USBAG1> at usbus0
+umass0 on uhub0
+umass0: <STT USBAG1, class 0/0, rev 3.00/11.00, addr 1> on usbus0
+umass0:  SCSI over Bulk-Only; quirks = 0x0
+umass0:1:0: Attached to scbus1
+uhub1: 2 ports with 2 removable, self powered
+ugen1.2: <vendor 0x0438 product 0x7900> at usbus1
+uhub2 on uhub1
+uhub2: <vendor 0x0438 product 0x7900, class 9/0, rev 2.00/0.18, addr 2> on usbus1
+uhub2: 4 ports with 4 removable, self powered
+Root mount waiting for: CAM usbus1
+ugen1.3: <Microchip Technology Inc. MCP2210 USB to SPI Master> at usbus1
+usbhid0 on uhub2
+usbhid0: <Microchip Technology Inc. MCP2210 USB to SPI Master, class 0/0, rev 2.00/0.02, addr 3> on usbus1
+hidbus0: <HID bus> on usbhid0
+Root mount waiting for: CAM
+Root mount waiting for: CAM
+Root mount waiting for: CAM
+Root mount waiting for: CAM
+Root mount waiting for: CAM
+Root mount waiting for: CAM
+ada0 at ahcich0 bus 0 scbus0 target 0 lun 0
+ada0: <ADATA IM2S3164-064GDA S180718z> ACS-2 ATA SATA 3.x device
+ada0: Serial Number 2L0929SHN2HH
+ada0: 600.000MB/s transfers (SATA 3.x, UDMA6, PIO 8192bytes)
+ada0: Command Queueing enabled
+ada0: 61057MB (125045424 512 byte sectors)
+da0 at umass-sim0 bus 0 scbus1 target 0 lun 0
+da0: <STT USB_AG1 1100> Removable Direct Access SPC-4 SCSI device
+da0: Serial Number 2417442100000060
+da0: 400.000MB/s transfers
+da0: 7500MB (15360000 512 byte sectors)
+da0: quirks=0x2<NO_6_BYTE>
+intsmb0: <AMD FCH SMBus Controller> at device 20.0 on pci0
+smbus0: <System Management Bus> on intsmb0
+lo0: link state changed to UP
+[102] ugen1.4: <USB USB Fash Disk> at usbus1
+[102] umass1 on uhub2
+[102] umass1: <USB USB Fash Disk, class 0/0, rev 2.00/0.00, addr 4> on usbus1
+[102] umass1:  SCSI over Bulk-Only; quirks = 0x0
+[102] umass1:2:1: Attached to scbus2
+[102] da1 at umass-sim1 bus 1 scbus2 target 0 lun 0
+da1: <USB USB Fash Disk 2.b0> Removable Direct Access SCSI-2 device
+da1: Serial Number BFTVBB900340734E
+da1: 40.000MB/s transfers
+da1: 3840MB (7864320 512 byte sectors)
+da1: quirks=0x2<NO_6_BYTE>
+[102] (da1:umass-sim1:1:0:0): CACHE PAGE TOO SHORT data len 11 desc len 8
+[102] (da1:umass-sim1:1:0:0): Mode page 8 missing, disabling SYNCHRONIZE CACHE
+[553] mvxgs0: <Marvell/Sophos XGS NPU PF diagnostic endpoint (experimental)> mem 0xfe000000-0xfe0fffff,0xfd000000-0xfdffffff,0xfc000000-0xfcffffff irq 35 at device 0.0 on pci1
+[553] mvxgs0: BAR0: start=0xfe000000 size=0x100000 (1048576 bytes)
+[553] mvxgs0: BAR2: start=0xfd000000 size=0x1000000 (16777216 bytes)
+[553] mvxgs0: BAR4: start=0xfc000000 size=0x1000000 (16777216 bytes)
+[553] mvxgs0: PCI 11ab:7080; MSI-X=16 MSI=32; phase7 attach is passive; command=0x2
+[553] mvxgs0: passive barmap scan: off=0xffe000 version=0x5 target_cookie=0xd0fac10d
+[553] mvxgs0: facility[4] giu   : BAR0 logical_off=0 size=0x4000
+[553] mvxgs0: facility[0] ctrl  : BAR1 logical_off=0 size=0x1000
+[553] mvxgs0: facility[1] mvmgmt: BAR1 logical_off=0x1000 size=0x1000
+[553] mvxgs0: facility[2] nwa   : BAR0 logical_off=0x4000 size=0x10000
+[553] mvxgs0: facility[3] rpc   : BAR1 logical_off=0x2000 size=0x100000
+[553] mvxgs0: ctrl: cookie=0xafacafac flags=0x1 target_ready=1 host_ready=0 host_alive=0
+[553] mvxgs0: mvmgmt: +0x10=0x80 +0x14=0x1 pattern=0xaa55aa55 target_pattern=1
+[553] mvxgs0: attach performed no protocol writes; HOST_READY requires prepare_msix + arm + signal
+[570] mvxgs0: passive barmap scan: off=0xffe000 version=0x5 target_cookie=0xd0fac10d
+[570] mvxgs0: facility[4] giu   : BAR0 logical_off=0 size=0x4000
+[570] mvxgs0: facility[0] ctrl  : BAR1 logical_off=0 size=0x1000
+[570] mvxgs0: facility[1] mvmgmt: BAR1 logical_off=0x1000 size=0x1000
+[570] mvxgs0: facility[2] nwa   : BAR0 logical_off=0x4000 size=0x10000
+[570] mvxgs0: facility[3] rpc   : BAR1 logical_off=0x2000 size=0x100000
+[570] mvxgs0: ctrl: cookie=0xafacafac flags=0x1 target_ready=1 host_ready=0 host_alive=0
+[570] mvxgs0: mvmgmt: +0x10=0x80 +0x14=0x1 pattern=0xaa55aa55 target_pattern=1
+[570] mvxgs0: PCI busmaster enabled: command 0x2 -> 0x6
+[574] mvxgs0: passive barmap scan: off=0xffe000 version=0x5 target_cookie=0xd0fac10d
+[574] mvxgs0: facility[4] giu   : BAR0 logical_off=0 size=0x4000
+[574] mvxgs0: facility[0] ctrl  : BAR1 logical_off=0 size=0x1000
+[574] mvxgs0: facility[1] mvmgmt: BAR1 logical_off=0x1000 size=0x1000
+[574] mvxgs0: facility[2] nwa   : BAR0 logical_off=0x4000 size=0x10000
+[574] mvxgs0: facility[3] rpc   : BAR1 logical_off=0x2000 size=0x100000
+[574] mvxgs0: ctrl: cookie=0xafacafac flags=0x1 target_ready=1 host_ready=0 host_alive=0
+[574] mvxgs0: mvmgmt: +0x10=0x80 +0x14=0x1 pattern=0xaa55aa55 target_pattern=1
+[657] mvxgs0: passive barmap scan: off=0xffe000 version=0x5 target_cookie=0xd0fac10d
+[657] mvxgs0: facility[4] giu   : BAR0 logical_off=0 size=0x4000
+[657] mvxgs0: facility[0] ctrl  : BAR1 logical_off=0 size=0x1000
+[657] mvxgs0: facility[1] mvmgmt: BAR1 logical_off=0x1000 size=0x1000
+[657] mvxgs0: facility[2] nwa   : BAR0 logical_off=0x4000 size=0x10000
+[657] mvxgs0: facility[3] rpc   : BAR1 logical_off=0x2000 size=0x100000
+[657] mvxgs0: ctrl: cookie=0xafacafac flags=0x1 target_ready=1 host_ready=0 host_alive=0
+[657] mvxgs0: mvmgmt: +0x10=0x80 +0x14=0x1 pattern=0xaa55aa55 target_pattern=1
+[657] mvxgs0: MSI-X[0] ready: rid=1 irq=0x3d
+[657] mvxgs0: MSI-X[1] ready: rid=2 irq=0x3e
+[657] mvxgs0: MSI-X[2] ready: rid=3 irq=0x3f
+[657] mvxgs0: MSI-X[3] ready: rid=4 irq=0x40
+[657] mvxgs0: MSI-X[4] ready: rid=5 irq=0x41
+[723] mvxgs0: passive barmap scan: off=0xffe000 version=0x5 target_cookie=0xd0fac10d
+[723] mvxgs0: facility[4] giu   : BAR0 logical_off=0 size=0x4000
+[723] mvxgs0: facility[0] ctrl  : BAR1 logical_off=0 size=0x1000
+[723] mvxgs0: facility[1] mvmgmt: BAR1 logical_off=0x1000 size=0x1000
+[723] mvxgs0: facility[2] nwa   : BAR0 logical_off=0x4000 size=0x10000
+[723] mvxgs0: facility[3] rpc   : BAR1 logical_off=0x2000 size=0x100000
+[723] mvxgs0: ctrl: cookie=0xafacafac flags=0x1 target_ready=1 host_ready=0 host_alive=0
+[723] mvxgs0: mvmgmt: +0x10=0x80 +0x14=0x1 pattern=0xaa55aa55 target_pattern=1
+[789] mvxgs0: passive barmap scan: off=0xffe000 version=0x5 target_cookie=0xd0fac10d
+[789] mvxgs0: facility[4] giu   : BAR0 logical_off=0 size=0x4000
+[789] mvxgs0: facility[0] ctrl  : BAR1 logical_off=0 size=0x1000
+[789] mvxgs0: facility[1] mvmgmt: BAR1 logical_off=0x1000 size=0x1000
+[789] mvxgs0: facility[2] nwa   : BAR0 logical_off=0x4000 size=0x10000
+[789] mvxgs0: facility[3] rpc   : BAR1 logical_off=0x2000 size=0x100000
+[789] mvxgs0: ctrl: cookie=0xafacafac flags=0x1 target_ready=1 host_ready=0 host_alive=0
+[789] mvxgs0: mvmgmt: +0x10=0x80 +0x14=0x1 pattern=0xaa55aa55 target_pattern=1
+root@OPNsense:/tmp/mvxgs-phase7/module #

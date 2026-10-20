@@ -1,0 +1,8 @@
+#!/bin/sh
+# SPDX-License-Identifier: MIT
+# A core/kernel update must never silently reuse a module for another ABI.
+# Validation is read-only; rebooting/reloading remains the operator's decision.
+if ! /usr/local/libexec/xgs116-agnic/agnic-control.sh check; then
+    logger -t xgs116-agnic 'AGNIC compatibility/readiness check failed after update; rebuild for the exact kernel before rebooting into service'
+    exit 1
+fi

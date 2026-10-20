@@ -1,0 +1,4 @@
+#!/bin/sh
+# SPDX-License-Identifier: MIT
+# OPNsense early syshook: before normal interface configuration.
+exec /usr/local/libexec/xgs116-agnic/agnic-control.sh start

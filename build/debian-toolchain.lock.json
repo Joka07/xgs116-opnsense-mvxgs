@@ -1,0 +1,433 @@
+{
+  "suite": "trixie",
+  "architecture": "amd64",
+  "packages": [
+    {
+      "name": "autoconf",
+      "version": "2.72-3.1",
+      "architecture": "all",
+      "sha256": "0de76b647b0afb6c7934999aaefeb463656c147672464a367df1019969e77af3",
+      "filename": "autoconf_2.72-3.1_all.deb"
+    },
+    {
+      "name": "automake",
+      "version": "1:1.17-4",
+      "architecture": "all",
+      "sha256": "8d4b172d4ff8070789c54b48a95585b53e4c65faeb07a2ae52da16cb364df635",
+      "filename": "automake_1%3a1.17-4_all.deb"
+    },
+    {
+      "name": "autotools-dev",
+      "version": "20240727.1",
+      "architecture": "all",
+      "sha256": "d07d476c1fcd713ed04695f25ac290c3ae2317e6fd974ad6b2168e3be1c795c3",
+      "filename": "autotools-dev_20240727.1_all.deb"
+    },
+    {
+      "name": "binutils-aarch64-linux-gnu",
+      "version": "2.44-3",
+      "architecture": "amd64",
+      "sha256": "6e5a9be38121213dda42189a525db01aad4dc52194b577d7d73d659a5843ce6c",
+      "filename": "binutils-aarch64-linux-gnu_2.44-3_amd64.deb"
+    },
+    {
+      "name": "bmake",
+      "version": "20200710-17",
+      "architecture": "amd64",
+      "sha256": "7def59c505272cae2235b9b546e494e38ad422821cb4b13c6e7b9bd73c45fd31",
+      "filename": "bmake_20200710-17_amd64.deb"
+    },
+    {
+      "name": "clang-19",
+      "version": "1:19.1.7-3+b1",
+      "architecture": "amd64",
+      "sha256": "bbb74458d782b7792b61b0eed92746df5e6d033778c045cf8c2b3835b7c4efc4",
+      "filename": "clang-19_1%3a19.1.7-3+b1_amd64.deb"
+    },
+    {
+      "name": "clang-tools-19",
+      "version": "1:19.1.7-3+b1",
+      "architecture": "amd64",
+      "sha256": "27fa6cb89386dc4c3dcbec5b6bd0839863ebd97316d21f44cdb42b6d9c9b1a2a",
+      "filename": "clang-tools-19_1%3a19.1.7-3+b1_amd64.deb"
+    },
+    {
+      "name": "clang",
+      "version": "1:19.0-63",
+      "architecture": "amd64",
+      "sha256": "5cf22fc7e42face0071b0e83d012dfc675b947a138acfe23a92d0bb39e5b1cdb",
+      "filename": "clang_1%3a19.0-63_amd64.deb"
+    },
+    {
+      "name": "cpp-14-aarch64-linux-gnu",
+      "version": "14.2.0-19cross1",
+      "architecture": "amd64",
+      "sha256": "6610dda7938376fefcbc3b49c81cd23c82e86411a488e4c9a69c082f2acd714e",
+      "filename": "cpp-14-aarch64-linux-gnu_14.2.0-19cross1_amd64.deb"
+    },
+    {
+      "name": "cpp-aarch64-linux-gnu",
+      "version": "4:14.2.0-1",
+      "architecture": "amd64",
+      "sha256": "4480016c11678c1a391f8b3d77d8c87915af5e5aaa96c21dcf69a9c516979e63",
+      "filename": "cpp-aarch64-linux-gnu_4%3a14.2.0-1_amd64.deb"
+    },
+    {
+      "name": "e2fsprogs-l10n",
+      "version": "1.47.2-3",
+      "architecture": "all",
+      "sha256": "609f1130508d54f0e3543f227426bb84856a9080b434151fc7a878ad84ca678a",
+      "filename": "e2fsprogs-l10n_1.47.2-3_all.deb"
+    },
+    {
+      "name": "e2fsprogs",
+      "version": "1.47.2-3+b12",
+      "architecture": "amd64",
+      "sha256": "e9e638eb3e22b5f14d01ce0b28aa512a5a22fcc0e70d1c733444579b67ea236b",
+      "filename": "e2fsprogs_1.47.2-3+b12_amd64.deb"
+    },
+    {
+      "name": "gawk",
+      "version": "1:5.2.1-2+b1",
+      "architecture": "amd64",
+      "sha256": "0e3b376e74cadfa5049bc8248c563efe89fd45e31466f8891c094c65c0879f5c",
+      "filename": "gawk_1%3a5.2.1-2+b1_amd64.deb"
+    },
+    {
+      "name": "gcc-14-aarch64-linux-gnu-base",
+      "version": "14.2.0-19cross1",
+      "architecture": "amd64",
+      "sha256": "4a40a7a5429a03f58bdb1f49df9b7aeecb86770f5585d88dcf6a27b5979a6d5d",
+      "filename": "gcc-14-aarch64-linux-gnu-base_14.2.0-19cross1_amd64.deb"
+    },
+    {
+      "name": "gcc-14-aarch64-linux-gnu",
+      "version": "14.2.0-19cross1",
+      "architecture": "amd64",
+      "sha256": "489acd3a7479d7e55c01e7f3af10176b70a99ec8c2230ba63cacdbcf2e6e0692",
+      "filename": "gcc-14-aarch64-linux-gnu_14.2.0-19cross1_amd64.deb"
+    },
+    {
+      "name": "gcc-14-cross-base",
+      "version": "14.2.0-19cross1",
+      "architecture": "all",
+      "sha256": "a6c277ad0961c1e69bebd2509151733961ea49bb53ff64aa1dac72b5929babf0",
+      "filename": "gcc-14-cross-base_14.2.0-19cross1_all.deb"
+    },
+    {
+      "name": "gcc-aarch64-linux-gnu",
+      "version": "4:14.2.0-1",
+      "architecture": "amd64",
+      "sha256": "ff536dd2b6a7f2879cf83ebadd7cc4af3e7234a87226a2ba97bbf0a857e930da",
+      "filename": "gcc-aarch64-linux-gnu_4%3a14.2.0-1_amd64.deb"
+    },
+    {
+      "name": "lib32gcc-s1",
+      "version": "14.2.0-19",
+      "architecture": "amd64",
+      "sha256": "aa7674a786d58a1efaacb3ce377c06a2d3153c1fa7360b08375c7dd67c90c3fe",
+      "filename": "lib32gcc-s1_14.2.0-19_amd64.deb"
+    },
+    {
+      "name": "lib32stdc++6",
+      "version": "14.2.0-19",
+      "architecture": "amd64",
+      "sha256": "326011247094e9a5e5b7dd431b67ccf6dddfd9c4ee5078a8d1a15661883791c2",
+      "filename": "lib32stdc++6_14.2.0-19_amd64.deb"
+    },
+    {
+      "name": "libasan8-arm64-cross",
+      "version": "14.2.0-19cross1",
+      "architecture": "all",
+      "sha256": "e223a6c4aa71aa8754abb845cba3de9ae175a213e36a98b67b1aad558ac818be",
+      "filename": "libasan8-arm64-cross_14.2.0-19cross1_all.deb"
+    },
+    {
+      "name": "libatomic1-arm64-cross",
+      "version": "14.2.0-19cross1",
+      "architecture": "all",
+      "sha256": "4a8636b3c0ab2b0a568d0b7fc6ab089d5b22f7a3e696fe8784acef594c88dc1c",
+      "filename": "libatomic1-arm64-cross_14.2.0-19cross1_all.deb"
+    },
+    {
+      "name": "libc6-arm64-cross",
+      "version": "2.41-11cross1",
+      "architecture": "all",
+      "sha256": "82cd3a0c6754d36cb5a7acbd9fa64c38080a681608c41165736dc88438acfc71",
+      "filename": "libc6-arm64-cross_2.41-11cross1_all.deb"
+    },
+    {
+      "name": "libc6-dev-arm64-cross",
+      "version": "2.41-11cross1",
+      "architecture": "all",
+      "sha256": "61e0b87dec4929abc9fb345ef324139498bf23ddbf0b10ca3a743b59c8ddf8bb",
+      "filename": "libc6-dev-arm64-cross_2.41-11cross1_all.deb"
+    },
+    {
+      "name": "libc6-i386",
+      "version": "2.41-12+deb13u4",
+      "architecture": "amd64",
+      "sha256": "50c1653ce29519e1fcd8742f2c67f5edad8d4c3aed3d1ffbea2b7c3497a809d2",
+      "filename": "libc6-i386_2.41-12+deb13u4_amd64.deb"
+    },
+    {
+      "name": "libclang-common-19-dev",
+      "version": "1:19.1.7-3+b1",
+      "architecture": "amd64",
+      "sha256": "4018e40e2d4144fe38c45822e68cca63c1bf6c7872c3073ebb262ad4b2f9b8bc",
+      "filename": "libclang-common-19-dev_1%3a19.1.7-3+b1_amd64.deb"
+    },
+    {
+      "name": "libclang-cpp19",
+      "version": "1:19.1.7-3+b1",
+      "architecture": "amd64",
+      "sha256": "a7d2b6df51050834f6ea5c0d5e34869c2298b0bcdaa91eff17ba3db2cd545c47",
+      "filename": "libclang-cpp19_1%3a19.1.7-3+b1_amd64.deb"
+    },
+    {
+      "name": "libclang-rt-19-dev",
+      "version": "1:19.1.7-3+b1",
+      "architecture": "amd64",
+      "sha256": "0c03a0a8fa37228e2de6c36d02ff0806643885c515a8137d1bcd22e248497cd6",
+      "filename": "libclang-rt-19-dev_1%3a19.1.7-3+b1_amd64.deb"
+    },
+    {
+      "name": "libext2fs2t64",
+      "version": "1.47.2-3+b12",
+      "architecture": "amd64",
+      "sha256": "9f5783fa48239e42260d41846fbc6c8b19c233251063524456096195660eaa09",
+      "filename": "libext2fs2t64_1.47.2-3+b12_amd64.deb"
+    },
+    {
+      "name": "libffi-dev",
+      "version": "3.4.8-2",
+      "architecture": "amd64",
+      "sha256": "76b2b80193a656733e1408ebec5371334be5fd48eb5f50ab99d6baf6081d0f1b",
+      "filename": "libffi-dev_3.4.8-2_amd64.deb"
+    },
+    {
+      "name": "libgcc-14-dev-arm64-cross",
+      "version": "14.2.0-19cross1",
+      "architecture": "all",
+      "sha256": "44d31567993f2f138638e3088cc75240d13c7d8a2ebe69032aafd37bc35c7a6f",
+      "filename": "libgcc-14-dev-arm64-cross_14.2.0-19cross1_all.deb"
+    },
+    {
+      "name": "libgcc-s1-arm64-cross",
+      "version": "14.2.0-19cross1",
+      "architecture": "all",
+      "sha256": "272751f04dc1669c6368005ccea3496b28626c720c64c98980f705350f4c6b6b",
+      "filename": "libgcc-s1-arm64-cross_14.2.0-19cross1_all.deb"
+    },
+    {
+      "name": "libgomp1-arm64-cross",
+      "version": "14.2.0-19cross1",
+      "architecture": "all",
+      "sha256": "6ef2c0825f2edd319d333fe6db721e1efa79bd595a5149c9f5a17af04dd40978",
+      "filename": "libgomp1-arm64-cross_14.2.0-19cross1_all.deb"
+    },
+    {
+      "name": "libhwasan0-arm64-cross",
+      "version": "14.2.0-19cross1",
+      "architecture": "all",
+      "sha256": "c0a783cec783df2ac0bae56887f3afd43f2f0047daf0aa8e51cb3147c2bcbbac",
+      "filename": "libhwasan0-arm64-cross_14.2.0-19cross1_all.deb"
+    },
+    {
+      "name": "libitm1-arm64-cross",
+      "version": "14.2.0-19cross1",
+      "architecture": "all",
+      "sha256": "61e0bc450632165ef442d0db2902831c878fe24bb89f08e7257e02d4eff92b40",
+      "filename": "libitm1-arm64-cross_14.2.0-19cross1_all.deb"
+    },
+    {
+      "name": "liblsan0-arm64-cross",
+      "version": "14.2.0-19cross1",
+      "architecture": "all",
+      "sha256": "31cb9c474a78ea3233e4ea87badadc33f0c7e48934e39965437091f7f6d5ab78",
+      "filename": "liblsan0-arm64-cross_14.2.0-19cross1_all.deb"
+    },
+    {
+      "name": "libltdl-dev",
+      "version": "2.5.4-4",
+      "architecture": "amd64",
+      "sha256": "0f225ed11c06958274e2ff0ea27f283f23aa6cd6a03df04499b467f68fedfed4",
+      "filename": "libltdl-dev_2.5.4-4_amd64.deb"
+    },
+    {
+      "name": "libncurses-dev",
+      "version": "6.5+20250216-2",
+      "architecture": "amd64",
+      "sha256": "6bd7804e243fc08e2a2af380c341998bb6d21dd35550588ecc430d7c488a410d",
+      "filename": "libncurses-dev_6.5+20250216-2_amd64.deb"
+    },
+    {
+      "name": "libobjc-14-dev",
+      "version": "14.2.0-19",
+      "architecture": "amd64",
+      "sha256": "60f8a34f94d46b0ae8d48335525bfaae3daef93c56d6b8bce0e76118e44a9136",
+      "filename": "libobjc-14-dev_14.2.0-19_amd64.deb"
+    },
+    {
+      "name": "libobjc4",
+      "version": "14.2.0-19",
+      "architecture": "amd64",
+      "sha256": "d48411ec79114d5941256dddb1720fc65cbe4733285b29d5ecc87eb452ab30d9",
+      "filename": "libobjc4_14.2.0-19_amd64.deb"
+    },
+    {
+      "name": "libpfm4",
+      "version": "4.13.0+git99-gc5587f9-1",
+      "architecture": "amd64",
+      "sha256": "55f0d470f5bdd63061593180c5b34bcb9cefdb09b4cfc9c67b3cb170b0162525",
+      "filename": "libpfm4_4.13.0+git99-gc5587f9-1_amd64.deb"
+    },
+    {
+      "name": "libsigsegv2",
+      "version": "2.14-1+b2",
+      "architecture": "amd64",
+      "sha256": "bac603b965f303ea88dc39cd723b3d88cd86e3be9c948783f0d5e0d00e971302",
+      "filename": "libsigsegv2_2.14-1+b2_amd64.deb"
+    },
+    {
+      "name": "libss2",
+      "version": "1.47.2-3+b12",
+      "architecture": "amd64",
+      "sha256": "c5d38d71984c1bf774c1254238636e605fc4e0dc24d853f709921eb740327f4a",
+      "filename": "libss2_1.47.2-3+b12_amd64.deb"
+    },
+    {
+      "name": "libstdc++6-arm64-cross",
+      "version": "14.2.0-19cross1",
+      "architecture": "all",
+      "sha256": "81e667b7dad2d378defcc502e9772fe4f435a27e62b7a33a20576885b02e9693",
+      "filename": "libstdc++6-arm64-cross_14.2.0-19cross1_all.deb"
+    },
+    {
+      "name": "libtool",
+      "version": "2.5.4-4",
+      "architecture": "all",
+      "sha256": "be5361a8c1fce2758c3e19608bf97393d5f3afdb7e926aeb83e2818355bd885f",
+      "filename": "libtool_2.5.4-4_all.deb"
+    },
+    {
+      "name": "libtsan2-arm64-cross",
+      "version": "14.2.0-19cross1",
+      "architecture": "all",
+      "sha256": "a93d548f6a34d1afb6f1dda193fe841c0d6225363af55e6106f333986c906169",
+      "filename": "libtsan2-arm64-cross_14.2.0-19cross1_all.deb"
+    },
+    {
+      "name": "libubsan1-arm64-cross",
+      "version": "14.2.0-19cross1",
+      "architecture": "all",
+      "sha256": "c9f76887373bf39380605cdbbbe2942f4a2ba434eb4aefdf3a573d9bed930ffb",
+      "filename": "libubsan1-arm64-cross_14.2.0-19cross1_all.deb"
+    },
+    {
+      "name": "libxml2-dev",
+      "version": "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+      "architecture": "amd64",
+      "sha256": "2d1a5825cabb43cf4be6848a4acc4a73c50d9c3740ab0c76e2fed80a3e5c6398",
+      "filename": "libxml2-dev_2.12.7+dfsg+really2.9.14-2.1+deb13u3_amd64.deb"
+    },
+    {
+      "name": "libz3-dev",
+      "version": "4.13.3-1",
+      "architecture": "amd64",
+      "sha256": "df63eae0c0b2a4d59577b2f36fe2521cb11aa2955e6fb242441603e5ae1cf757",
+      "filename": "libz3-dev_4.13.3-1_amd64.deb"
+    },
+    {
+      "name": "linux-libc-dev-arm64-cross",
+      "version": "6.12.38-1cross1",
+      "architecture": "all",
+      "sha256": "fd77c13fedf057038732ef1c4fc06edd753d08092fd5f92c4629551f1f69870f",
+      "filename": "linux-libc-dev-arm64-cross_6.12.38-1cross1_all.deb"
+    },
+    {
+      "name": "lld-19",
+      "version": "1:19.1.7-3+b1",
+      "architecture": "amd64",
+      "sha256": "756a805e8811d527dd2b5417f016c9342b8631fa9c1ddcd56265c13ae33bf3a4",
+      "filename": "lld-19_1%3a19.1.7-3+b1_amd64.deb"
+    },
+    {
+      "name": "lld",
+      "version": "1:19.0-63",
+      "architecture": "amd64",
+      "sha256": "0710869b540bcdc5daa8414085e668438988161c3ec5d0596230818639069f31",
+      "filename": "lld_1%3a19.0-63_amd64.deb"
+    },
+    {
+      "name": "llvm-19-dev",
+      "version": "1:19.1.7-3+b1",
+      "architecture": "amd64",
+      "sha256": "b518fad63beae8e64ec40766c634d00b64ec4ca91ed6d32b3c93efafc1b9e20d",
+      "filename": "llvm-19-dev_1%3a19.1.7-3+b1_amd64.deb"
+    },
+    {
+      "name": "llvm-19-linker-tools",
+      "version": "1:19.1.7-3+b1",
+      "architecture": "amd64",
+      "sha256": "874a0a5cde797cda3e94e9310a0a9958608f526f177637414a8ce9620c804818",
+      "filename": "llvm-19-linker-tools_1%3a19.1.7-3+b1_amd64.deb"
+    },
+    {
+      "name": "llvm-19-runtime",
+      "version": "1:19.1.7-3+b1",
+      "architecture": "amd64",
+      "sha256": "84a9dfc277f0914cb84e6cb3d139d3eb3dfe19f06670bbdea4241e8e3d921a4e",
+      "filename": "llvm-19-runtime_1%3a19.1.7-3+b1_amd64.deb"
+    },
+    {
+      "name": "llvm-19-tools",
+      "version": "1:19.1.7-3+b1",
+      "architecture": "amd64",
+      "sha256": "452a16286ed957c41be096624affd751ccb359de8aa80cfbb2472f6cbd16e688",
+      "filename": "llvm-19-tools_1%3a19.1.7-3+b1_amd64.deb"
+    },
+    {
+      "name": "llvm-19",
+      "version": "1:19.1.7-3+b1",
+      "architecture": "amd64",
+      "sha256": "0b1b7263f4f45e261099240fdbf00fc14b42b88410fd829e041bf83ea45866cb",
+      "filename": "llvm-19_1%3a19.1.7-3+b1_amd64.deb"
+    },
+    {
+      "name": "llvm-runtime",
+      "version": "1:19.0-63",
+      "architecture": "amd64",
+      "sha256": "9a0a80aa8d83b3f60ed664a3cd1e5c50c635974ad1777446175e1434496814fa",
+      "filename": "llvm-runtime_1%3a19.0-63_amd64.deb"
+    },
+    {
+      "name": "llvm",
+      "version": "1:19.0-63",
+      "architecture": "amd64",
+      "sha256": "116f3b5edcedc1ea890c172f7893f3b3ebf2f5e38e3b12faa3101cb37209156b",
+      "filename": "llvm_1%3a19.0-63_amd64.deb"
+    },
+    {
+      "name": "logsave",
+      "version": "1.47.2-3+b12",
+      "architecture": "amd64",
+      "sha256": "aa028720743b79bd054749af34c501c093f0ab5e044e4dc44273765be5e95de5",
+      "filename": "logsave_1.47.2-3+b12_amd64.deb"
+    },
+    {
+      "name": "m4",
+      "version": "1.4.19-8",
+      "architecture": "amd64",
+      "sha256": "221b3e224708c1da2a1a88b6824380593579b2254ae7d914afa14cbd5d343334",
+      "filename": "m4_1.4.19-8_amd64.deb"
+    },
+    {
+      "name": "pkg-config",
+      "version": "1.8.1-4",
+      "architecture": "amd64",
+      "sha256": "385209ba52e5c97808bbdc2fc4da22aea9020f96fbab6fbfb144921c4a31d400",
+      "filename": "pkg-config_1.8.1-4_amd64.deb"
+    }
+  ]
+}

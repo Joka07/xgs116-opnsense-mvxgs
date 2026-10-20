@@ -1,0 +1,7 @@
+{
+  "schema": 1,
+  "kernel_release": "REPLACE_WITH_UNAME_R_FROM_OWN_NPU",
+  "serial_recovery_confirmed": false,
+  "stock_service_startup_reviewed": false,
+  "disable_paths": []
+}

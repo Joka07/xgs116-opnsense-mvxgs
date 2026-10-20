@@ -1,4 +1,46 @@
-# Sophos XGS 116 / Marvell 11ab:7080 — OPNsense FreeBSD-Treiberforschung
+# Sophos XGS 116: experimentelle OPNsense-Integration
+
+Implementierte Host-/NPU-Integration für OPNsense 26.7 / FreeBSD
+15.1-RELEASE-p1, amd64. **Noch keine Produktionsfreigabe.**
+Treiber und ARM64-Forwarder sind quellgebaut; physische Ports,
+RX/TX, Stromausfallstart und Leistung müssen am Gerät abgenommen werden.
+Der bekannte TX-Ausfall gilt noch nicht als auf Hardware behoben.
+
+- driver/if_agnic: neun Interfaces, stabile Geräte-MACs, korrigierte
+  Ring-/Buffer-/VLAN-Behandlung und Readiness-/Fehlerdiagnosen.
+- npu: statischer Forwarder, explizite SWOP-v1-/v2-Profile,
+  DSA/VLAN-Konvertierung, MUSDK-Reinit-Patches und einmaliger Start.
+- installer und host: versionsgebundene OPNsense-Syshooks, Dry-Run,
+  Backups, Integritätsprüfungen, Host-Rollback und private Offline-NPU-
+  Imagevorbereitung ohne Blockgeräte-/Bootvariablenschreibzugriff.
+- tests: portable C-/Protokoll-/ext4-/Installationsprüfungen sowie
+  ausdrücklich zu startende Hardware- und Performancetests.
+
+Einstieg: [BUILD](docs/BUILD.md), [INSTALL](docs/INSTALL.md),
+[NPU-SETUP](docs/NPU-SETUP.md), [RECOVERY](docs/RECOVERY.md).
+Ergebnisse: [VALIDATION](docs/VALIDATION.md).
+Offene Abnahme: [REMAINING](docs/REMAINING.md),
+[COMPATIBILITY](docs/COMPATIBILITY.md) und [PERFORMANCE](docs/PERFORMANCE.md).
+Quellen/Lizenzen: [SOURCE-REFERENCES](docs/SOURCE-REFERENCES.md).
+
+In der vorbereiteten Cloud:
+
+~~~sh
+cd /workspace/xgs116-opnsense-mvxgs
+. /workspace/toolchain/activate.sh
+python3 tests/run-host.py
+~~~
+
+Lokale Buildartefakte und Prüfsummen liegen in artifacts/. Proprietäre
+NPU-Originale und Schlüssel bleiben außerhalb des Gitcheckouts.
+Routing/NAT/pf und die Migration deines Konfigurationsbackups bleiben
+bei OPNsense bzw. beim Betreiber.
+
+## Historischer mvxgs-Forschungsstand
+
+Die folgenden ursprünglichen Angaben beschreiben current/ und phases/.
+Für den neuen vollständigen Datenpfad gilt driver/if_agnic; beide
+Treiber dürfen nicht gleichzeitig an 11ab:7080 gebunden werden.
 
 Experimentelle Clean-Room-Kompatibilitätsarbeit für den Marvell-NPU/Endpoint in einer Sophos XGS 116. Ziel ist, die onboard Ethernet-Ports unter OPNsense / FreeBSD nutzbar zu machen.
 

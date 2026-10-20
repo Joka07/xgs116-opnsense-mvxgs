@@ -1,0 +1,79 @@
+diff --git a/src/mng/lf/pf/pf.c b/src/mng/lf/pf/pf.c
+index d5306739..e2db966f 100644
+--- a/src/mng/lf/pf/pf.c
++++ b/src/mng/lf/pf/pf.c
+@@ -788,6 +788,29 @@ static int nmnicpf_pf_init_command(struct nmnicpf *nmnicpf,
+ {
+ 	int ret, i;
+ 
++	/* xgs-npu-freebsd slot-leak re-INIT teardown: the host reattach re-drives CC_PF_INIT..INIT_DONE
++	 * with NO CC_PF_CLOSE, so a 2nd nmnicpf_pf_init_done_command would re-run giu_gpio_init
++	 * (kcalloc-overwrites the handle; giu_gpio_register -EINVAL "already registered" is
++	 * ignored) and, for a PP2 port, NAK at pp2_ppio_available. Tear the stale datapath down
++	 * here -- BEFORE nmnicpf_topology_remote_queue_init memsets gpio_rem_params, so
++	 * clear_remote can still unwind -- to make re-INIT idempotent. */
++	if (nmnicpf->initialized) {
++		u8 __bm;
++		pr_info("PF re-INIT: tearing down stale datapath before rebuild\n");
++		if (nmnicpf->giu_gpio) {
++			giu_gpio_deinit(nmnicpf->giu_gpio);
++			nmnicpf->giu_gpio = NULL;
++		}
++		for (__bm = 0; __bm < nmnicpf->gpio_params.intcs_params[0].num_inpools; __bm++)
++			giu_bpool_deinit(nmnicpf->giu_bpools[__bm]);
++		if (nmnicpf->profile_data.port_type == NMP_LF_NICPF_T_PP2_PORT &&
++		    nmnicpf->pp2.ports_desc && nmnicpf->pp2.ports_desc[0].ppio) {
++			pp2_ppio_deinit(nmnicpf->pp2.ports_desc[0].ppio);
++			nmnicpf->pp2.ports_desc[0].ppio = NULL;
++		}
++		nmnicpf->initialized = 0;
++	}
++
+ 	pr_debug("PF INIT\n");
+ 	pr_debug("Num of - Ing TC %d, Eg TC %d\n",
+ 				params->init.num_host_ingress_tc,
+@@ -1286,7 +1309,7 @@ static int nmnicpf_pf_init_done_command(struct nmnicpf *nmnicpf,
+ 
+ 		if (bpool_id < 0) {
+ 			pr_err("Failed to alloc giu bpool\n");
+-			return ret;
++			return bpool_id;
+ 		}
+ 		/* Create bpool match string */
+ 		memset(name, 0, sizeof(name));
+diff --git a/src/mng/lf/pf/pf_topology.c b/src/mng/lf/pf/pf_topology.c
+index d8b31d64..b05e044c 100644
+--- a/src/mng/lf/pf/pf_topology.c
++++ b/src/mng/lf/pf/pf_topology.c
+@@ -121,8 +121,14 @@ int pf_outtc_queue_init(struct nmnicpf *nmnicpf, u32 type, u32 tc_num, u32 q_num
+ 	for (tc_idx = 0; tc_idx < tc_num; tc_idx++) {
+ 		if (type == LCL)
+ 			nmnicpf->gpio_params.outtcs_params[tc_idx].num_outqs = q_num;
+-		else if (type == REM)
++		else if (type == REM) {
+ 			nmnicpf->gpio_rem_params.outtcs_params[tc_idx].num_rem_inqs = q_num;
++			/* xgs-npu-freebsd slot-leak: clear the remote ingress queue slots so a re-CC_PF_INIT
++			 * frees any leaked slot (outtc_q_next_entry_get keys on .q_params.len==0;
++			 * upstream never clears it -> 2nd CC_PF_INGRESS_DATA_Q_ADD NAKs 0x01). */
++			memset(nmnicpf->gpio_rem_params.outtcs_params[tc_idx].rem_inqs_params, 0,
++			       sizeof(nmnicpf->gpio_rem_params.outtcs_params[tc_idx].rem_inqs_params));
++		}
+ 	}
+ 
+ 	return 0;
+@@ -147,8 +153,14 @@ int pf_intc_queue_init(struct nmnicpf *nmnicpf, u32 type, u32 tc_num, u32 q_num)
+ 	for (tc_idx = 0; tc_idx < tc_num; tc_idx++) {
+ 		if (type == LCL)
+ 			nmnicpf->gpio_params.intcs_params[tc_idx].num_inqs = q_num;
+-		else if (type == REM)
++		else if (type == REM) {
+ 			nmnicpf->gpio_rem_params.intcs_params[tc_idx].num_rem_outqs = q_num;
++			/* xgs-npu-freebsd slot-leak: symmetric egress clear. The host reattach always sends
++			 * CC_PF_EGRESS_DATA_Q_ADD; intc_q_next_entry_get keys on rem_outqs_params[].len,
++			 * so without this the 0x01 merely relocates from ingress to egress. */
++			memset(nmnicpf->gpio_rem_params.intcs_params[tc_idx].rem_outqs_params, 0,
++			       sizeof(nmnicpf->gpio_rem_params.intcs_params[tc_idx].rem_outqs_params));
++		}
+ 	}
+ 
+ 	return 0;

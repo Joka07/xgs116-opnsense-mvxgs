@@ -1,0 +1,23 @@
+This repository contains components under different licenses.
+
+driver/if_agnic: BSD-2-Clause, derived from The Mamoru Project and selected
+XGS126 work by Michael Piorkowski. Preserve individual file notices.
+npu/firmware/forwarder.c: Marvell's original multi-license header is retained;
+this project uses the GPL-2.0 option.
+npu/firmware/tag_dsa.h: GPL-2.0-or-later; see its provenance notice.
+Other imported NPU helper sources: MIT unless their file header says otherwise.
+New integration, build scripts, installer and tests: MIT, copyright (c) 2026
+XGS116 integration contributors. Documentation added for this integration: MIT.
+MUSDK is fetched separately at a pinned commit and retains its own licensing.
+
+Full license texts are in LICENSES/. Source references and selected modifications
+are documented in docs/SOURCE-REFERENCES.md and component documentation.
+Distribution of dp_fwd must include its corresponding source, including the
+pinned MUSDK tree, modifications, build scripts and applicable license texts.
+
+No license is newly assigned here to the pre-existing current/, phases/,
+captures/ or other historical research files. Consult their existing notices
+and original authors before redistribution.
+
+Sophos firmware, bootloader, vendor modules, original private backups and keys
+are not distributed or relicensed by this project.

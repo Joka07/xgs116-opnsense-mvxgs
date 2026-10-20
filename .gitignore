@@ -21,3 +21,11 @@ reverse-engineering-binaries/
 .DS_Store
 Thumbs.db
 *.swp
+
+# Integration outputs, local hardware evidence and private firmware material
+/artifacts/
+/.build/
+/private/
+/vendor/
+__pycache__/
+*.pyc
